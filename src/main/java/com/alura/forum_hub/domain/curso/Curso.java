@@ -16,11 +16,23 @@ public class Curso {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private long id;
+  
   private String nome;
-  private Categoria caegoria;
+  @Enumerated(EnumType.STRING)
+  private Categoria categoria;
   
   public Curso(CursoCadastro dadosCurso){
     this.nome     = dadosCurso.nome();
-    this.caegoria = dadosCurso.categoria();
+    this.categoria = dadosCurso.categoria();
+  }
+  
+  public void atualizar(CursoAtualizacao dadosCurso) {
+    if (dadosCurso.nome() != null){
+      this.nome = dadosCurso.nome();
+    }
+    
+    if (dadosCurso.categoria() != null){
+      this.categoria = dadosCurso.categoria();
+    }
   }
 }
