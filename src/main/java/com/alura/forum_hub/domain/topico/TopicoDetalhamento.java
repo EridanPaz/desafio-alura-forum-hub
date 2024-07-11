@@ -2,12 +2,11 @@ package com.alura.forum_hub.domain.topico;
 
 import com.alura.forum_hub.domain.curso.Curso;
 import com.alura.forum_hub.domain.usuario.Usuario;
-
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public record TopicoDetalhamento(long id,
                                  Usuario autor,
-                                 LocalDate dataCriacao,
+                                 LocalDateTime dataCriacao,
                                  String titulo,
                                  String mensagem,
                                  Status status,

@@ -5,23 +5,31 @@ import com.alura.forum_hub.domain.usuario.Perfil;
 import com.alura.forum_hub.domain.usuario.Usuario;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public record TopicoCadastro(@NotNull
-                             Usuario autor,
+                             Long autor,
+                             
                              @NotNull
-                             LocalDate dataCriacao,
+                             @Future
+                             LocalDateTime dataCriacao,
+                             
                              @NotNull
                              String titulo,
+                             
                              @NotNull
                              String mensagem,
+                             
                              @Enumerated(EnumType.STRING)
                              @NotNull
                              Status status,
+                             
                              @NotNull
-                             Curso curso
+                             Long curso
 ) {
 }

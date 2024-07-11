@@ -6,4 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface TopicoRepository extends JpaRepository<Topico, Long> {
 
   void deleteById(Long id);
+  
+  Boolean existsByTituloAndMensagem(String titulo, String mensagem);
 }
